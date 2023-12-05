@@ -19,9 +19,8 @@ export default {
       },
       boxShadow: {
         'uxl': '25px -25px 60px -15px rgba(0, 0, 0, 0.3 )',
-        'tight': ' 10px 10px rgba(52, 52, 52, 0.4)',
+        'tight': ' 10px 10px rgba(52, 52, 52, 0.2)',
         'ulg': '25px -25px 60px -15px rgba(0, 0, 0, 0.3 )'
-
       }
     },
   },
