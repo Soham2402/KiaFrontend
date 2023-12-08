@@ -1,19 +1,31 @@
-import Axios from './components/Axios'
-import Categories from './components/Categories'
-import Header from './components/Header'
-import Hero from './components/Hero'
+
+import { lazy, Suspense  } from 'react'
+
+import { Route, Routes } from 'react-router-dom'
+import Landing from './pages/Landing'
+import CategoryPage from './pages/CategoryPage'
+import ItemsPage from './pages/ItemsPage'
+import About from './pages/About'
+
 
 
 
 
 export default function App() {
+
+  const LazyHeader = lazy(()=> import('./components/Header'))
+
   return (
     <div className=" text-text-primary  bg-primary-bg">
-        <Header/>
-        <Hero/>
-        <Categories/>
+      <Suspense fallback = {<p>Loading......</p>}><LazyHeader /></Suspense>
 
-        {/* <Axios/> */}
+      <Routes>
+          <Route path='/' element = {<Landing/>} exact/>
+          <Route path='/categories/' element = {<CategoryPage/>} />
+          <Route path='/store/' element = {<ItemsPage/>} />
+          <Route path='/about/' element = {<About/>} />
+
+      </Routes>
     </div>
   )
 }

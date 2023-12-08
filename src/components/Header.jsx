@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'
+
+
+
 
 
 const Header = () => {
@@ -23,18 +27,25 @@ const Header = () => {
           <a href="">Kia Enterprises</a>
         </span>
         <span className='flex align-middle gap-11 flex-wrap'>
-          <a href="">categories</a>
-          <a href="">products</a>
-          <a href="">contact us</a>
-          <a href="">about</a>
+          <Link to="/categories/">categories</Link>
+          <Link to="/store/">products</Link>
+          <Link to="/">contact us</Link>
+          <Link to="/about/">about</Link>
         </span>
       </nav>
 
 
-     
+      
       <div className='fixed lg:hidden w-full bg-primary-bg z-[1001]'>
-        <div className='relative left-[70%] md:left-[87%] cursor-pointer px-10 pt-2' onClick={handleNav}>
-           <Hamburger toggled={isOpen} toggle={setOpen} color='#EDAFB8' />
+        {/* <div className='relative left-[70%] md:left-[87%] cursor-pointer px-10 py-2' > */}
+        <div className='flex text-center items-center justify-between  p-2' >
+          <span className='text-[1.5em] pl-2 font-nica'>
+            <a href="">Kia</a>
+          </span>
+          <span  onClick={handleNav}>
+            <Hamburger toggled={isOpen} toggle={setOpen} color='#EDAFB8'  />
+          </span>
+           
         </div>
       </div>
 

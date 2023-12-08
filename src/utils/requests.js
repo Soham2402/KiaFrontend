@@ -1,5 +1,9 @@
 import axios from "axios";
 export const listItems = async () => {
-   const result = await axios.get("http://127.0.0.1:8000/inventory/")
-   return result.data
+   try{
+      const result = axios.get('http://127.0.0.1:8000/category/')
+      return (await result).data
+   }catch(error){
+      console.log("Error fetching the data: ", error)
+   }
 };
