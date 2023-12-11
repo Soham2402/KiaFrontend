@@ -26,7 +26,9 @@ const Categories = () => {
         }
     }
 
-    useEffect(()=> setData,[])
+    useEffect(() => {
+        setData();
+      }, []);
 
 
   return (
