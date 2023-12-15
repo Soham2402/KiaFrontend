@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { listItems } from '../utils/requests'
+import { listCategories } from '../utils/requests'
+import  NotFound  from './NotFound'
 import Loading from './Loading'
 import { Link } from 'react-router-dom'
 
@@ -13,10 +14,9 @@ const Categories = () => {
     const [error, setError] = useState(null)
 
 
-
     const setData = async ()=>{
         try{
-            const data = await listItems()
+            const data = await listCategories()
             setItems(data)
         }catch(error){
             setError(error.message)
@@ -26,9 +26,17 @@ const Categories = () => {
         }
     }
 
-    useEffect(() => {
-        setData();
-      }, []);
+    function hasWhiteSpace(s) {
+        let output = s[0]
+        if (s.indexOf(' ') >= 0){
+            return output+s[s.indexOf(' ')+1]
+        }else{
+            return output+s[1]
+        }
+      }
+
+
+    useEffect(()=> setData,[])
 
 
   return (
@@ -43,36 +51,37 @@ const Categories = () => {
     <div className='flex flex-col items-center justify-around '>
     {
         loading? <Loading/>
-        : !items ? (
-            <div className=' text-center align-top font-bold text-[2em]'>
-              <p>Error loading items :(</p>
-            </div>
-        ):
-        (
+        : error ? <p className=' w-screen text-lg font-bold text-center justify-self-center'>There was an error, please try later</p>
+        : items.length < 3 ? <NotFound/>:
+        (<>
             <div className='mt-[5em] md:mt-auto flex flex-col items-center gap-10 py-[3em] md:flex-row  md:py-[5em] md:justify-evenly  bg-hero-blue w-full'>
-            <section className='max-w-[40vh] md:max-w-[45vh] md:mr-11 relative bottom-32 flex flex-col gap-3 z-[999]'>
-                <img className='rounded-2xl shadow-ulg' src="https://images.unsplash.com/photo-1572978567882-408eb0787206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFsbCUyMGhvbWUlMjBkZWNvcnxlbnwwfHwwfHw=&w=1000&q=80" alt="" />
-                <section className='text-center pb-5 pt-2'>
-                    <h2 className=' text-3xl font-bold '>{items[0] ? items[0].name: "its pretty!"}</h2>
-                </section>
-            </section>
-            <section className='max-w-[40vh] md:max-w-[45vh] md:mr-11  relative bottom-32 md:top-12 flex flex-col md:flex-col-reverse  gap-3'>
-                <img className=' rounded-2xl  shadow-uxl' src="https://images.unsplash.com/photo-1572978567882-408eb0787206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFsbCUyMGhvbWUlMjBkZWNvcnxlbnwwfHwwfHw=&w=1000&q=80" alt="" />
-                <section className='text-center pb-5 pt-2'>
-                    <h2 className=' text-3xl font-bold '>{items[1] ? items[1].name: "its pretty!"}</h2>
-                </section>
-            </section>
-            <section className='max-w-[40vh] md:max-w-[45vh] md:mr-11  relative bottom-32 flex gap-3 flex-col'>
-                <img className=' rounded-2xl  shadow-uxl' src="https://images.unsplash.com/photo-1572978567882-408eb0787206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFsbCUyMGhvbWUlMjBkZWNvcnxlbnwwfHwwfHw=&w=1000&q=80" alt="" />
-                <section className='text-center pb-5 pt-2'>
-                    <h2 className=' text-3xl font-bold '>{items[2] ? items[2].name: "its pretty!"}</h2>
-                </section>
-            </section>
+                
+        <Link to={`/categories/store/${items[0].id}`} className='relative bottom-32 hover:border-pink-500 border-button rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto bg-button p-2 w-[60vw] h-[60vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw] shadow-tight '> 
+          <div className=' flex flex-col items-center justify-center h-[100%]'>
+            <div className=' text-7xl font-bold uppercase text-pink-500'>{hasWhiteSpace(items[0].name)}</div>
+            <div className=' text-md shadow-ti uppercase text-pink-500 font-nica font-bold'>{items[0].name}</div>
+          </div>
+        </Link>
+
+        <Link to={`/categories/store/${items[1].id}`} className='relative bottom-32 md:top-12 hover:border-pink-500 border-button rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto bg-button p-2 w-[60vw] h-[60vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw] shadow-tight '> 
+          <div className=' flex flex-col items-center justify-center h-[100%]'>
+          <div className=' text-7xl font-bold uppercase text-pink-500'>{hasWhiteSpace(items[1].name)}</div>
+            <div className=' text-md shadow-ti uppercase text-pink-500 font-nica font-bold'>{items[1].name}</div>
+          </div>
+        </Link>
+    
+        <Link to={`/categories/store/${items[2].id}`} className='relative bottom-32 hover:border-pink-500 border-button rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto bg-button p-2 w-[60vw] h-[60vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw] shadow-tight '> 
+          <div className=' flex flex-col items-center justify-center h-[100%]'>
+          <div className=' text-7xl font-bold uppercase text-pink-500'>{hasWhiteSpace(items[2].name)}</div>
+            <div className=' text-md shadow-ti uppercase text-pink-500 font-nica font-bold'>{items[3].name}</div>
+          </div>
+        </Link>
             </div>
+        <Link to='/categories/' className='hover:scale-105 transition-transform relative bottom-32 md:bottom-[19em]  md:text-[1.5em] bg-white font-serif text-black text-[1em] self-center px-[4em] py-[1em] rounded-[5em] shadow-tight'>Shop Now</Link>
+        </>
         )
         
     }
-    <Link to='/store/' className='relative bottom-32 md:right-[1em] md:bottom-[28em]  md:text-[1.5em] bg-white font-serif text-black text-[1em] self-center px-[4em] py-[1em] rounded-[5em] shadow-tight' href="">Shop Now</Link>
 
 
     </div>

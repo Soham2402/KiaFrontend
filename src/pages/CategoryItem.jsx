@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { getItem } from '../utils/requests'
+import { listCategoryItem } from '../utils/requests'
 import Loading from '../components/Loading'
 import ItemCard from '../components/ItemCard'
 import NotFound from '../components/NotFound'
+import { useParams } from 'react-router-dom'
 
-const ItemsPage = () => {
+const CategoryItem = () => {
+
+  const {id} = useParams()
 
   const [products, setProducts] = useState([]) 
   const [loading, setLoading] = useState(true) 
@@ -12,7 +15,7 @@ const ItemsPage = () => {
 
   const getData = async () =>{
     try{
-      const result = await getItem()
+      const result = await listCategoryItem(id)
       setProducts(result)
     }catch(error){
       setError("There was an error")
@@ -22,7 +25,7 @@ const ItemsPage = () => {
     }
   }
   useEffect(() => getData,[])
-
+  console.log(products)
   return (
 
 
@@ -41,4 +44,4 @@ const ItemsPage = () => {
   )
 }
 
-export default ItemsPage
+export default CategoryItem

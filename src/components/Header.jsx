@@ -33,7 +33,7 @@ const Header = () => {
           <Link to="/categories/" >categories</Link>
           <Link to="/store/">products</Link>
           <Link to="/">contact us</Link>
-          <Link to="/about/">about</Link>
+          <Link to="/"  duration={1000}>home</Link>
         </span>
       </nav>
 
@@ -64,7 +64,7 @@ const Header = () => {
           <Link  to="/categories/" onClick={handleNav}  className='w-[100vw] py-10  cursor-pointer mb-[10px]' >categories</Link>
           <Link to="/store/" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>products</Link>
           <Link to="/" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>contact us</Link>
-          <Link to="/about/" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>about</Link>
+          <Link to="/"  duration={1000} onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>home</Link>
           </div>
         </motion.div>
       )}

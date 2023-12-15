@@ -15,12 +15,15 @@ export default {
       fontFamily: {
         serif: [ 'DM Serif Text', 'serif'],
         nica: [ 'Aclonica', 'serif'],
+        cardo:['Cardo', 'serif'],
 
       },
       boxShadow: {
         'uxl': '25px -25px 60px -15px rgba(0, 0, 0, 0.3 )',
         'tight': ' 10px 10px rgba(52, 52, 52, 0.2)',
-        'ulg': '25px -25px 60px -15px rgba(0, 0, 0, 0.3 )'
+        'ulg': '25px -25px 60px -15px rgba(0, 0, 0, 0.3 )',
+        'tight-pink': ' 10px 10px rgb(237, 175, 184)',
+
       }
     },
   },

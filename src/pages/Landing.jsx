@@ -1,4 +1,5 @@
 import { lazy, Suspense  } from 'react'
+import Loading from '../components/Loading'
 
 
 export default function Landing() {
@@ -13,10 +14,10 @@ export default function Landing() {
 
   return (
     <div className=" text-text-primary  bg-primary-bg">
-      <Suspense fallback = {<p>Loading......</p>}><LazyHero /></Suspense>
-      <Suspense fallback = {<p>Loading......</p>}><LazyCategory /></Suspense>
-      <Suspense fallback = {<p>Loading......</p>}><LazyProduct /></Suspense>
-      <Suspense fallback = {<p>Loading......</p>}><LazyFooter /></Suspense>
+      <Suspense fallback = { <Loading/>}><LazyHero /></Suspense>
+      <Suspense fallback = { <Loading/>}><LazyCategory /></Suspense>
+      <Suspense fallback = { <Loading/>}><LazyProduct /></Suspense>
+      <Suspense fallback = { <Loading/>}><LazyFooter /></Suspense>
     </div>
   )
 }

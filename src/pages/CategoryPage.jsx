@@ -1,18 +1,49 @@
-import React from 'react'
-6
+import React, { useState,useEffect } from 'react'
+import CategoryCard from '../components/CategoryCard'
+import { listCategories } from '../utils/requests'
+import Loading from '../components/Loading'
+import NotFound from '../components/NotFound'
+
 const CategoryPage = () => {
+
+  
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+
+  const setData = async ()=>{
+      try{
+          const data = await listCategories()
+          setItems(data)
+      }catch(error){
+          setError(error.message)
+          console.log("Error while setting data", error)
+      }finally{
+          setLoading(false)
+      }
+  }
+
+  useEffect(()=> setData,[])
+
+
+
+
   return (
-    <div className=' pt-[7em] w-screen'>
+
+    
+    <div className=' pt-[7em] max-w-screen min-h-screen'>
+      {loading? <Loading/>:
+      error? <NotFound/>:
+      items.length === 0 ? <NotFound/>:
       <section className='grid grid-cols-1 gap-5 lg:grid-cols-3 md:grid-cols-3 md:w-[90%] lg:w-[65%] overflow-hidden m-auto p-3'> 
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw] '> category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
-        <div className='hover:border-pink-500 rounded-lg hover:scale-105 transition-transform cursor-pointer border-2 m-auto shadow-lg bg-button p-3 w-[70vw] h-[70vw] text-center md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw]'>  category 1</div>
+      {
+        items.map((item)=> <CategoryCard key={item.id} item = {item}/>)
+      }
+          
       </section> 
+      }
+
     </div>
   )
 }
