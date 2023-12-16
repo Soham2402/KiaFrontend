@@ -20,10 +20,7 @@ const Carousal = ({ images }) => {
           />
         </span>
         <span className="flex md:justify-start justify-center gap-4 flex-wrap">
-          {images.map((image, key) => {
-            if (key === 4) {
-              return null;
-            } else {
+          {images.map((image, key) => { {
               return (
                 <img
                   key={key}

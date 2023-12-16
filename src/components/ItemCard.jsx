@@ -6,7 +6,7 @@ const ItemCard = ({product}) => {
     const {img, name, price} = product
     console.log(img)
   return (
-    <Link to={`/store/${img.product}`} className='py-5 px-3 gap-2 h-[300px] hover:scale-105 transition-transform cursor-pointer flex flex-col items-center justify-start bg-hero-blue shadow-tight-pink rounded-3xl '>
+    <Link to={`/store/${img.product}`} className='py-5 px-3 gap-2 h-[350px] hover:scale-105 transition-transform cursor-pointer flex flex-col items-center justify-start bg-hero-blue shadow-tight-pink rounded-3xl '>
         <span className=''>
         <img
             className="max-w-[200px] max-h-[250px] item shadow-lg rounded-lg"
