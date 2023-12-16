@@ -32,7 +32,7 @@ const Header = () => {
         <span className='flex align-middle gap-11 flex-wrap'>
           <Link to="/categories/" >categories</Link>
           <Link to="/store/">products</Link>
-          <Link to="/">contact us</Link>
+          <a href="https://wa.me/9326759131">contact us</a>
           <Link to="/"  duration={1000}>home</Link>
         </span>
       </nav>
@@ -63,7 +63,7 @@ const Header = () => {
           <div className='flex flex-col items-center text-2xl h-[70%] justify-start text-center'>
           <Link  to="/categories/" onClick={handleNav}  className='w-[100vw] py-10  cursor-pointer mb-[10px]' >categories</Link>
           <Link to="/store/" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>products</Link>
-          <Link to="/" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>contact us</Link>
+          <a href="https://wa.me/9326759131" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>contact us</a>
           <Link to="/"  duration={1000} onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>home</Link>
           </div>
         </motion.div>

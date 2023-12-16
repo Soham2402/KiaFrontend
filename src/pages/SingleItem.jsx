@@ -33,7 +33,15 @@ const SingleItem = () => {
     }, 2000);
   };
 
-  useEffect(() => {
+  const generateWhatsAppLink = () => {
+    const productName = item.name;
+    const productLink = window.location.href;
+    const encodedMessage = encodeURIComponent(`I am interested in this product: ${productName}\n${productLink}`);
+    return `https://wa.me/9326759131?text=${encodedMessage}`;
+  };
+
+
+  useEffect(() => { 
     getItem();
   }, []);
 
@@ -54,12 +62,12 @@ const SingleItem = () => {
 
                 <span className="flex items-center justify-between gap-3 md:gap-10 flex-col md:flex-row">
                   <h1 className="font-bold text-2xl">Price: ₹ {item.price}</h1>
-                  <button
+                  <a href={generateWhatsAppLink()}  target="_blank" rel="noopener noreferrer"
                     onClick={HandleClick}
                     className="bg-white mt-5 md:mt-0 font-serif text-black text-2xl self-center px-[1em] py-[0.5em] rounded-[5em] shadow-tight hover:scale-110 transition-transform"
                   >
                     Contact me
-                  </button>
+                  </a>
                 </span>
               </section>
             </div>
