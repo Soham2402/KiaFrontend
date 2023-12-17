@@ -46,16 +46,16 @@ const ProductIntro = () => {
                         <h2 className=' text-3xl font-bold '>{products[0]? products[0].name:'More to come'}</h2>
                     </section>
                 </Link>
-                <Link to={products[1]?`/store/${products[1].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11  flex flex-col gap-3'>
-                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[1]? `https://api.kiaartworks.in${products[1].product_images[0].image}`:imgLink} alt="" />
+                <Link to={products[8]?`/store/${products[8].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11  flex gap-3 flex-col'>
+                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[8]? `https://api.kiaartworks.in${products[8].product_images[0].image}` :imgLink} alt="" />
                     <section className='text-center pb-5 pt-2'>
-                        <h2 className=' text-3xl font-bold '>{products[1]? products[0].name:'More to come'}</h2>
+                        <h2 className=' text-3xl font-bold '>{products[8]? products[8].name:'More to come'}</h2>
                     </section>
                 </Link>
-                <Link to={products[2]?`/store/${products[2].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11  flex gap-3 flex-col'>
-                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[2]? `https://api.kiaartworks.in${products[2].product_images[0].image}` :imgLink} alt="" />
+                <Link to={products[5]?`/store/${products[5].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11  flex gap-3 flex-col'>
+                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[5]? `https://api.kiaartworks.in${products[5].product_images[0].image}` :imgLink} alt="" />
                     <section className='text-center pb-5 pt-2'>
-                        <h2 className=' text-3xl font-bold '>{products[2]? products[0].name:'More to come'}</h2>
+                        <h2 className=' text-3xl font-bold '>{products[5]? products[5].name:'More to come'}</h2>
                     </section>
                 </Link>
                 </div>

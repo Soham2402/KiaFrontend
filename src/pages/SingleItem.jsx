@@ -59,7 +59,7 @@ const SingleItem = () => {
               <section className="flex flex-col items-center justify-evenly md:max-w-[30vw] gap-[2em]">
                 <span className=" flex flex-col md:gap-8 gap-4">
                   <h1 className="font-bold text-3xl text-center">{item.name}</h1>
-                  <p className="font-cardo md:text-lg text-sm">{item.description.about}</p>
+                  <p className="font-cardo text-center md:text-lg text-sm">{item.description.about}</p>
                 </span>
 
                 <span className="flex items-center justify-between gap-3 md:gap-10 flex-col md:flex-row">
