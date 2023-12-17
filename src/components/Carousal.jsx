@@ -7,6 +7,7 @@ const Carousal = ({ images }) => {
     setIndex(key);
   };
 
+  const defaultImg = "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
 
   return (
@@ -15,7 +16,7 @@ const Carousal = ({ images }) => {
         <span className="">
           <img
             className="md:max-w-xl max-h-[25em] md:max-h-[33em] item shadow-lg rounded-lg"
-            src={`https://api.kiaartworks.in${images[index].image}`}  // Use the image URL from the API response
+            src={images[0]? `https://api.kiaartworks.in${images[index].image}`:defaultImg }  // Use the image URL from the API response
             alt=""
           />
         </span>
