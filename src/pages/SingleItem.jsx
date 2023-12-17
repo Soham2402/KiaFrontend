@@ -46,12 +46,12 @@ const SingleItem = () => {
   }, []);
 
   return (
-    <div className="pt-[7em] bg-hero-blue flex min-h-screen items-start md:items-center justify-start md:justify-center relative">
+    <div className="pt-[7em] bg-hero-blue flex min-h-screen items-start md:items-center justify-center md:justify-center relative">
 
       {loading ? <Loading /> :
         error ? <p>There was an error try later</p> :
           item.length === 0 ? <NotFound /> :
-            <div className="flex md:gap-[10em] gap-[2em] items-center js flex-col md:flex-row mx-4 my-10">
+            <div className="flex md:gap-[10em] gap-[2em] items-center justify-center  flex-col md:flex-row mx-4 my-10">
               {item && item.product_images && <Carousal images={item.product_images} />}
 
               <section className="flex flex-col items-center justify-evenly md:max-w-[30vw] gap-[2em]">
