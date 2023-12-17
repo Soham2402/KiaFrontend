@@ -29,7 +29,7 @@ const CategoryItem = () => {
   return (
 
 
-    <div className=' pt-[7em]'>
+    <div className=' py-[7em]'>
       {loading?<Loading/>:
       error? <NotFound/>:
       products.length == 0? <NotFound/>:

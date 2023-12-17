@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ItemCard = ({ product }) => {
   const { img, name, price } = product;
-
+  const prodLink = "https://images.unsplash.com/photo-1572978567882-408eb0787206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFsbCUyMGhvbWUlMjBkZWNvcnxlbnwwfHwwfHw=&w=1000&q=80"
 
   return (
 
@@ -16,7 +16,7 @@ const ItemCard = ({ product }) => {
       <span>
         <img
           className="max-w-[200px] max-h-[250px] item shadow-lg rounded-lg"
-          src={`https://api.kiaartworks.in${img.image}`}
+          src={img.image ? `https://api.kiaartworks.in${img.image}`: prodLink}
           alt=""
         />
       </span>
