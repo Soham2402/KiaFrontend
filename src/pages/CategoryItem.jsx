@@ -24,7 +24,7 @@ const CategoryItem = () => {
       setLoading(false)
     }
   }
-  useEffect(() => getData,[])
+  useEffect(() =>  {setData()},[])
   console.log(products)
   return (
 

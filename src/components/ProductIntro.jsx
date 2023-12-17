@@ -22,7 +22,7 @@ const ProductIntro = () => {
         setLoading(false)
       }
     }
-    useEffect(() => getData,[])
+    useEffect(() =>  {getData()},[])
 
   return (
 

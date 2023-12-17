@@ -15,16 +15,20 @@ const CategoryPage = () => {
   const setData = async ()=>{
       try{
           const data = await listCategories()
+          console.log(data)
           setItems(data)
+          setLoading(false)
       }catch(error){
           setError(error.message)
           console.log("Error while setting data", error)
+          setLoading(false)
+
       }finally{
           setLoading(false)
       }
   }
 
-  useEffect(()=> setData,[])
+  useEffect(()=> {setData()},[])
 
 
 

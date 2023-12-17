@@ -21,7 +21,7 @@ const ItemsPage = () => {
       setLoading(false)
     }
   }
-  useEffect(() => getData,[])
+  useEffect(() => {getData()},[])
 
   return (
 
