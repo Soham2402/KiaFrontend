@@ -31,7 +31,7 @@ const ItemsPage = () => {
   }, [products]);
 
   return (
-    <div className='pt-[7em]'>
+    <div className='py-[7em] md:max-w-[80%] m-auto'>
       {loading ? (
         <Loading />
       ) : error ? (
@@ -39,7 +39,7 @@ const ItemsPage = () => {
       ) : products.length === 0 ? (
         <NotFound />
       ) : (
-        <div className='min-h-screen flex flex-col md:flex-row items-center md:items-start justify-start md:justify-center gap-5'>
+        <div className='min-h-screen  flex flex-col md:flex-row items-center md:items-start justify-start md:justify-center  flex-wrap gap-5'>
           {products.map((product) => (
             <ItemCard
               key={product.id}

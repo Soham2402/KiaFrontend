@@ -27,7 +27,7 @@ const Header = () => {
     <div className='bg-primary-bg font-serif text-[20px] fixed z-[1000] w-full'>
       <nav className='hidden lg:flex justify-between items-center p-5 flex-wrap w-[90%] m-auto'>
         <span className='text-[2em] font-nica'>
-          <Link to="/">Kia</Link>
+          <Link to="/">Kia Artworks</Link>
         </span>
         <span className='flex align-middle gap-11 flex-wrap'>
           <Link to="/categories/" >categories</Link>
@@ -42,8 +42,8 @@ const Header = () => {
       <div className='fixed lg:hidden w-full bg-primary-bg z-[1001]'>
         {/* <div className='relative left-[70%] md:left-[87%] cursor-pointer px-10 py-2' > */}
         <div className='flex text-center items-center justify-between  p-2' >
-          <span className='text-[1.5em] pl-2 font-nica'>
-            <Link to="/">Kia</Link>
+          <span className='text-[1.3em] self-center justify-self-center pl-2 font-nica'>
+            <Link to="/" className='text-center'>Kia Artworks</Link>
           </span>
           <span>
             <Hamburger toggled={nav} toggle={setNav} color='#EDAFB8'  />
@@ -63,7 +63,7 @@ const Header = () => {
           <div className='flex flex-col items-center text-2xl h-[70%] justify-start text-center'>
           <Link  to="/categories/" onClick={handleNav}  className='w-[100vw] py-10  cursor-pointer mb-[10px]' >categories</Link>
           <Link to="/store/" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>products</Link>
-          <a href="https://wa.me/9326759131" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>contact us</a>
+          <a href="https://wa.me/9820024015" onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>contact us</a>
           <Link to="/"  duration={1000} onClick={handleNav}  className='w-[100vw] py-10  mb-[10px]'>home</Link>
           </div>
         </motion.div>

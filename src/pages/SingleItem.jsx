@@ -37,7 +37,7 @@ const SingleItem = () => {
     const productName = item.name;
     const productLink = window.location.href;
     const encodedMessage = encodeURIComponent(`I am interested in this product: ${productName}\n${productLink}`);
-    return `https://wa.me/9326759131?text=${encodedMessage}`;
+    return `https://wa.me/9820024015?text=${encodedMessage}`;
   };
 
 
@@ -51,7 +51,7 @@ const SingleItem = () => {
       {loading ? <Loading /> :
         error ? <p>There was an error try later</p> :
           item.length === 0 ? <NotFound /> :
-            <div className="flex md:gap-[10em] gap-[2em] items-center justify-center  flex-col md:flex-row mx-4 my-10">
+            <div className="flex md:gap-[10em] gap-[2em] items-center justify-center flex-col md:flex-row mx-4 my-10">
               {item && item.product_images && <Carousal images={item.product_images} />}
 
               <section className="flex flex-col items-center justify-evenly md:max-w-[30vw] gap-[2em]">
