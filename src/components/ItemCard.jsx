@@ -10,7 +10,7 @@ const ItemCard = ({product}) => {
         <span className=''>
         <img
             className="max-w-[200px] max-h-[250px] item shadow-lg rounded-lg"
-            src={`http://localhost:8000${img.image}`} 
+            src={`https://api.kiaartworks.in${img.image}`} 
             alt=""
           />
         </span>

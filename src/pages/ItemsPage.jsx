@@ -31,7 +31,8 @@ const ItemsPage = () => {
       error? <NotFound/>:
       products.length == 0? <NotFound/>:
       <div className='min-h-screen flex flex-col md:flex-row items-center md:items-start justify-start md:justify-center gap-5'>
-          {
+          { 
+            
             products.map((product)=> <ItemCard key = {product.id} product = {{"img":product.product_images[1],"name":product.name,"price":product.price}}/>)
           }
       </div>

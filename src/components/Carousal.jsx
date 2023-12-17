@@ -15,7 +15,7 @@ const Carousal = ({ images }) => {
         <span className="">
           <img
             className="md:max-w-xl max-h-[25em] md:max-h-[33em] item shadow-lg rounded-lg"
-            src={`http://localhost:8000${images[index].image}`}  // Use the image URL from the API response
+            src={`https://api.kiaartworks.in${images[index].image}`}  // Use the image URL from the API response
             alt=""
           />
         </span>
@@ -26,7 +26,7 @@ const Carousal = ({ images }) => {
                   key={key}
                   className="md:max-w-[5em] max-h-[5em] rounded-lg cursor-pointer"
                   onClick={() => changeIndex(key)}
-                  src={`http://localhost:8000${image.image}`}  // Use the image URL from the API response
+                  src={`https://api.kiaartworks.in${image.image}`}  // Use the image URL from the API response
                   alt=""
                 />
               );

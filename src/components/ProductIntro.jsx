@@ -41,19 +41,19 @@ const ProductIntro = () => {
                 <div className='mt-[1em] md:mt-auto flex flex-col items-center gap-10 py-5 md:flex-row  md:py-[5em] md:justify-evenly'>
    
                 <Link to={products[0]?`/store/${products[0].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11 flex flex-col gap-3 z-[999]'>
-                    <img className='hover:scale-110 transition-transform rounded-2xl shadow-ulg' src={products[0]? `http://localhost:8000${products[0].product_images[0].image}` :imgLink} alt="" />
+                    <img className='hover:scale-110 transition-transform rounded-2xl shadow-ulg' src={products[0]? `https://api.kiaartworks.in${products[0].product_images[0].image}` :imgLink} alt="" />
                     <section className='text-center pb-5 pt-2'>
                         <h2 className=' text-3xl font-bold '>{products[0]? products[0].name:'More to come'}</h2>
                     </section>
                 </Link>
                 <Link to={products[1]?`/store/${products[1].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11  flex flex-col gap-3'>
-                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[1]? `http://localhost:8000${products[1].product_images[1].image}`:imgLink} alt="" />
+                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[1]? `https://api.kiaartworks.in${products[1].product_images[1].image}`:imgLink} alt="" />
                     <section className='text-center pb-5 pt-2'>
                         <h2 className=' text-3xl font-bold '>{products[1]? products[1].name:'More to come'}</h2>
                     </section>
                 </Link>
                 <Link to={products[2]?`/store/${products[2].id}`:'/store/'} className='max-w-[40vh] md:max-w-[45vh] md:mr-11  flex gap-3 flex-col'>
-                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[2]? `http://localhost:8000${products[2].product_images[2].image}` :imgLink} alt="" />
+                    <img className='hover:scale-110 transition-transform  rounded-2xl  shadow-uxl' src={products[2]? `https://api.kiaartworks.in${products[2].product_images[2].image}` :imgLink} alt="" />
                     <section className='text-center pb-5 pt-2'>
                         <h2 className=' text-3xl font-bold '>{products[2]? products[2].name:'More to come'}</h2>
                     </section>
