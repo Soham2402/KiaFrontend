@@ -48,7 +48,7 @@ const SingleItem = () => {
   }, []);
 
   return (
-    <div className="pt-[7em] bg-hero-blue flex min-h-screen items-start md:items-center justify-center md:justify-center relative">
+    <div className="pt-[3em] bg-hero-blue flex min-h-screen items-start md:items-center justify-center md:justify-center relative">
 
       {loading ? <Loading /> :
         error ? <p>There was an error try later</p> :
